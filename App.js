@@ -4,26 +4,26 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-function Feed() {
+function HomeScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Feed!</Text>
+      <Text>HomeScreen!</Text>
     </View>
   );
 }
 
-function Profile() {
+function ContactScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Profile!</Text>
+      <Text>ContactScreen!</Text>
     </View>
   );
 }
 
-function Notifications() {
+function AboutScreen() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Notifications!</Text>
+      <Text>AboutScreen!</Text>
     </View>
   );
 }
@@ -33,14 +33,14 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Feed"
+      initialRouteName="HomeScreen"
       screenOptions={{
         tabBarActiveTintColor: '#e91e63',
       }}
     >
       <Tab.Screen
-        name="Feed"
-        component={Feed}
+        name="HomeScreen"
+        component={HomeScreen}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => (
@@ -49,20 +49,20 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="Notifications"
-        component={Notifications}
+        name="AboutScreen"
+        component={AboutScreen}
         options={{
-          tabBarLabel: 'Updates',
+          tabBarLabel: 'About',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="bell" color={color} size={size} />
           ),
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={Profile}
+        name="ContactScreen"
+        component={ContactScreen}
         options={{
-          tabBarLabel: 'Profile',
+          tabBarLabel: 'Contact',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={size} />
           ),
